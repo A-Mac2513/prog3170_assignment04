@@ -1,7 +1,9 @@
 package com.assignment04.TileStore.Resource;
 
 import com.assignment04.TileStore.Persistence.Inventory.Inventory;
+import com.assignment04.TileStore.Persistence.Tile.Tile;
 import com.assignment04.TileStore.Service.InventoryService;
+import com.assignment04.TileStore.Service.TileService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,9 +11,11 @@ import java.util.List;
 @RestController
 public class InventoryResource {
     InventoryService service;
+    TileService tileService;
 
-    public InventoryResource(InventoryService service) {
+    public InventoryResource(InventoryService service, TileService ts) {
         this.service = service;
+        this.tileService = ts;
     }
 
     @GetMapping(value = "/inventory")
@@ -26,6 +30,7 @@ public class InventoryResource {
 
     @PostMapping(value = "/inventory")
     public Inventory addInventory(Inventory inventory) {
+        inventory.setTile(tileService.getById(inventory.getTile().getT_id()));
         return service.addInventory(inventory);
     }
 

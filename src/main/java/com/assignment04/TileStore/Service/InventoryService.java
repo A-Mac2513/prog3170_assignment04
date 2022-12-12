@@ -2,6 +2,7 @@ package com.assignment04.TileStore.Service;
 
 import com.assignment04.TileStore.Persistence.Inventory.Inventory;
 import com.assignment04.TileStore.Persistence.Inventory.InventoryRepository;
+import com.assignment04.TileStore.Persistence.Tile.Tile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,0 +1,5 @@
+com\assignment04\TileStore\Service\CustomerService.class
+com\assignment04\TileStore\Service\InventoryService.class
+com\assignment04\TileStore\Resource\InventoryResource.class
+com\assignment04\TileStore\Resource\CustomerResource.class
+com\assignment04\TileStore\Persistence\Customer\CustomerRepository.class

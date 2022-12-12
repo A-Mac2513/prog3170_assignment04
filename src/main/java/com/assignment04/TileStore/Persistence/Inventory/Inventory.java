@@ -14,10 +14,11 @@ public class Inventory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long inv_id;
 
-    private long t_id;
+    //private long t_id;
 
-    /*@OneToOne(mappedBy = "inventory")
-    private Tile tile;*/
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "t_id", referencedColumnName = "t_id")
+    private Tile tile;
 
     private int qty;
 }
